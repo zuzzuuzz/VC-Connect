@@ -1,0 +1,9 @@
+{
+  "name": "velourcare-ortho-cloud-public",
+  "private": true,
+  "description": "Public asset directory proxy for VelourCare Ortho Cloud",
+  "scripts": {
+    "start": "node ../server.js",
+    "dev": "node ../server.js"
+  }
+}

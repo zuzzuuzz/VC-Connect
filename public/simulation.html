@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VelourCare 3D Aligner Simulation | Case VELOUR-0001</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <!-- Remixicon & Fonts -->
+    <link rel="stylesheet" href="/assets/index-G8lhJxba.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #111420;
+            font-family: 'HK Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #e9ecef;
+        }
+        #webgl-container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        /* Top Navigation Header */
+        .viewer-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: rgba(17, 20, 32, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .viewer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .viewer-brand img {
+            height: 32px;
+            width: 32px;
+            object-fit: contain;
+        }
+        .viewer-brand-title {
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 0.3px;
+        }
+        .viewer-case-badge {
+            background: rgba(10, 179, 156, 0.2);
+            color: #0ab39c;
+            border: 1px solid rgba(10, 179, 156, 0.4);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .patient-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            color: #a0aec0;
+        }
+        .patient-meta strong {
+            color: #fff;
+        }
+        /* Floating Control Bar */
+        .viewer-controls {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            background: rgba(22, 27, 46, 0.92);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 40px;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        }
+        .ctrl-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 16px;
+        }
+        .ctrl-btn:hover {
+            background: #0ab39c;
+            border-color: #0ab39c;
+            color: #fff;
+            transform: scale(1.05);
+        }
+        .ctrl-btn.active {
+            background: #405189;
+            border-color: #405189;
+        }
+        .timeline-slider-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 280px;
+        }
+        .timeline-slider {
+            flex: 1;
+            -webkit-appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.2);
+            outline: none;
+        }
+        .timeline-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #0ab39c;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(10, 179, 156, 0.8);
+        }
+        .stage-indicator {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0ab39c;
+            min-width: 85px;
+            text-align: center;
+        }
+        /* Right Side Diagnostic Panel */
+        .side-panel {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            z-index: 10;
+            width: 300px;
+            background: rgba(22, 27, 46, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .side-panel h6 {
+            margin: 0 0 12px 0;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #0ab39c;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .ipr-mini-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-size: 12px;
+        }
+        .ipr-mini-row:last-child {
+            border-bottom: none;
+        }
+        .ipr-badge-mini {
+            background: rgba(240, 101, 72, 0.2);
+            color: #f06548;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .ipr-timing-mini {
+            color: #f7b84b;
+            font-size: 11px;
+        }
+        /* View Preset Buttons */
+        .view-presets {
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .preset-btn {
+            background: rgba(22, 27, 46, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #e2e8f0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        .preset-btn:hover, .preset-btn.active {
+            background: #0ab39c;
+            color: #fff;
+            border-color: #0ab39c;
+        }
+    </style>
+</head>
+<body>
+    <div class="viewer-header">
+        <div class="viewer-brand">
+            <img src="/assets/velourcare-square.png" alt="VelourCare Logo">
+            <span class="viewer-brand-title">VelourCare Ortho</span>
+            <span class="viewer-case-badge">3D Digital Setup #1</span>
+        </div>
+        <div class="patient-meta">
+            <span>Patient: <strong>Fatima Al-Nuaimi</strong></span>
+            <span>Case ID: <strong>VELOUR-0001</strong></span>
+            <span>Doctor: <strong>Dr. Alexander Wright</strong></span>
+            <span>Prescription: <strong>22 Upper / 18 Lower</strong></span>
+        </div>
+        <div>
+            <a href="/cases/1/view" style="color:#0ab39c;text-decoration:none;font-size:13px;font-weight:600;">
+                <i class="ri-arrow-left-line"></i> Back to Case
+            </a>
+        </div>
+    </div>
+
+    <!-- View Preset Angles -->
+    <div class="view-presets">
+        <button class="preset-btn active" onclick="setView('front', event)">Frontal Bite</button>
+        <button class="preset-btn" onclick="setView('upper', event)">Upper Occlusal</button>
+        <button class="preset-btn" onclick="setView('lower', event)">Lower Occlusal</button>
+        <button class="preset-btn" onclick="setView('right', event)">Right Buccal</button>
+        <button class="preset-btn" onclick="setView('left', event)">Left Buccal</button>
+        <button class="preset-btn" onclick="toggleAligner()"><i class="ri-shield-check-line"></i> Toggle Aligner</button>
+    </div>
+
+    <!-- Right Side Diagnostic Panel -->
+    <div class="side-panel">
+        <h6>
+            <span>IPR Reduction Staging</span>
+            <span class="badge bg-primary-subtle text-primary" style="font-size:11px;">1.20mm Total</span>
+        </h6>
+        <div class="ipr-mini-row">
+            <span><strong>11 - 21</strong> (Centrals)</span>
+            <span class="ipr-badge-mini">0.30 mm</span>
+            <span class="ipr-timing-mini">After Step 03</span>
+        </div>
+        <div class="ipr-mini-row">
+            <span><strong>21 - 22</strong> (Cent-Lat)</span>
+            <span class="ipr-badge-mini">0.20 mm</span>
+            <span class="ipr-timing-mini">After Step 03</span>
+        </div>
+        <div class="ipr-mini-row">
+            <span><strong>12 - 11</strong> (Lat-Cent)</span>
+            <span class="ipr-badge-mini">0.20 mm</span>
+            <span class="ipr-timing-mini">After Step 05</span>
+        </div>
+        <div class="ipr-mini-row">
+            <span><strong>31 - 41</strong> (Centrals)</span>
+            <span class="ipr-badge-mini">0.20 mm</span>
+            <span class="ipr-timing-mini">After Step 02</span>
+        </div>
+        <div class="ipr-mini-row">
+            <span><strong>41 - 42</strong> (Cent-Lat)</span>
+            <span class="ipr-badge-mini">0.30 mm</span>
+            <span class="ipr-timing-mini">After Step 04</span>
+        </div>
+
+        <div style="margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;color:#a0aec0;">
+            <i class="ri-information-line text-info"></i> Wear schedule: 10 days per stage.<br>
+            Perform IPR before inserting indicated stage.
+        </div>
+    </div>
+
+    <!-- Floating Playback Bar -->
+    <div class="viewer-controls">
+        <button class="ctrl-btn" id="playBtn" onclick="togglePlay()" title="Play / Pause Animation">
+            <span id="playIcon">▶</span>
+        </button>
+        <button class="ctrl-btn" onclick="prevStep()" title="Previous Stage">◀</button>
+        <div class="timeline-slider-wrap">
+            <input type="range" min="1" max="22" value="1" class="timeline-slider" id="stageSlider" oninput="onSliderChange(this.value)">
+            <span class="stage-indicator" id="stageLabel">Stage 01 / 22</span>
+        </div>
+        <button class="ctrl-btn" onclick="nextStep()" title="Next Stage">▶</button>
+        <button class="ctrl-btn" onclick="resetRotation()" title="Reset Camera">↺</button>
+    </div>
+
+    <div id="webgl-container"></div>
+
+    <script>
+        let scene, camera, renderer, upperArch, lowerArch, upperAligner, lowerAligner;
+        let isPlaying = false;
+        let currentStep = 1;
+        const totalSteps = 22;
+        let playInterval = null;
+        let showAligner = true;
+
+        function init() {
+            const container = document.getElementById('webgl-container');
+            if (typeof THREE === 'undefined') {
+                container.innerHTML = `
+                    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#fff;text-align:center;padding:24px;">
+                        <div style="font-size:40px;margin-bottom:12px;">🦷</div>
+                        <h3>3D Simulation Offline Mode</h3>
+                        <p style="color:#a0aec0;max-width:440px;font-size:14px;">The Three.js 3D rendering library could not be loaded from CDN. Verify internet connectivity to stream WebGL aligner animation.</p>
+                    </div>
+                `;
+                return;
+            }
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x111420);
+
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 5, 28);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.shadowMap.enabled = true;
+            container.appendChild(renderer.domElement);
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+            scene.add(ambientLight);
+
+            const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
+            dirLight1.position.set(10, 20, 15);
+            scene.add(dirLight1);
+
+            const dirLight2 = new THREE.DirectionalLight(0x0ab39c, 0.3);
+            dirLight2.position.set(-10, -10, -10);
+            scene.add(dirLight2);
+
+            buildDentalArches();
+
+            // Mouse Interaction (Orbit)
+            let isDragging = false;
+            let prevMouseX = 0;
+            let prevMouseY = 0;
+
+            container.addEventListener('mousedown', e => {
+                isDragging = true;
+                prevMouseX = e.clientX;
+                prevMouseY = e.clientY;
+            });
+
+            window.addEventListener('mouseup', () => { isDragging = false; });
+
+            window.addEventListener('mousemove', e => {
+                if (!isDragging) return;
+                const deltaX = e.clientX - prevMouseX;
+                const deltaY = e.clientY - prevMouseY;
+                scene.rotation.y += deltaX * 0.008;
+                scene.rotation.x += deltaY * 0.008;
+                prevMouseX = e.clientX;
+                prevMouseY = e.clientY;
+            });
+
+            window.addEventListener('wheel', e => {
+                camera.position.z += e.deltaY * 0.02;
+                camera.position.z = Math.max(10, Math.min(60, camera.position.z));
+            });
+
+            window.addEventListener('resize', onWindowResize);
+            animate();
+        }
+
+        function createTooth(x, y, z, rotY, scaleY = 1.0, isLower = false) {
+            const group = new THREE.Group();
+            
+            // Enamel crown geometry
+            const crownGeo = new THREE.CylinderGeometry(0.7, 0.85, 1.8 * scaleY, 16);
+            const enamelMat = new THREE.MeshPhongMaterial({
+                color: 0xf4f3ec,
+                specular: 0x666666,
+                shininess: 90
+            });
+            const crown = new THREE.Mesh(crownGeo, enamelMat);
+            group.add(crown);
+
+            // Subtle composite attachment
+            const attGeo = new THREE.BoxGeometry(0.3, 0.5, 0.25);
+            const attMat = new THREE.MeshPhongMaterial({ color: 0x0ab39c, shininess: 80 });
+            const attachment = new THREE.Mesh(attGeo, attMat);
+            attachment.position.set(0, 0, 0.85);
+            group.add(attachment);
+
+            group.position.set(x, y, z);
+            group.rotation.y = rotY;
+            return group;
+        }
+
+        function buildDentalArches() {
+            upperArch = new THREE.Group();
+            lowerArch = new THREE.Group();
+
+            // Build U-shaped Maxillary Arch (14 teeth)
+            const numTeeth = 14;
+            for (let i = 0; i < numTeeth; i++) {
+                const angle = (i / (numTeeth - 1)) * Math.PI;
+                const radiusX = 6.2;
+                const radiusZ = 6.8;
+                const x = -Math.cos(angle) * radiusX;
+                const z = -Math.sin(angle) * radiusZ + 2.5;
+                const rotY = angle - Math.PI / 2;
+
+                const upperTooth = createTooth(x, 1.4, z, rotY, 1.1, false);
+                upperArch.add(upperTooth);
+
+                const lowerTooth = createTooth(x * 0.94, -1.4, z * 0.94, rotY, 0.95, true);
+                lowerArch.add(lowerTooth);
+            }
+
+            // Create translucent aligner shells
+            const upperAlignerGeo = new THREE.TorusGeometry(6.4, 0.9, 12, 32, Math.PI);
+            const alignerMat = new THREE.MeshPhysicalMaterial({
+                color: 0x85e3ff,
+                transparent: true,
+                opacity: 0.35,
+                roughness: 0.1,
+                transmission: 0.8,
+                ior: 1.45
+            });
+            upperAligner = new THREE.Mesh(upperAlignerGeo, alignerMat);
+            upperAligner.rotation.x = Math.PI / 2;
+            upperAligner.position.set(0, 1.4, 2.5);
+            upperArch.add(upperAligner);
+
+            const lowerAlignerGeo = new THREE.TorusGeometry(6.0, 0.85, 12, 32, Math.PI);
+            lowerAligner = new THREE.Mesh(lowerAlignerGeo, alignerMat);
+            lowerAligner.rotation.x = Math.PI / 2;
+            lowerAligner.position.set(0, -1.4, 2.5);
+            lowerArch.add(lowerAligner);
+
+            scene.add(upperArch);
+            scene.add(lowerArch);
+        }
+
+        function onSliderChange(val) {
+            currentStep = parseInt(val);
+            document.getElementById('stageLabel').innerText = `Stage ${String(currentStep).padStart(2, '0')} / ${totalSteps}`;
+            applyStageMorph(currentStep);
+        }
+
+        function applyStageMorph(step) {
+            const factor = step / totalSteps;
+            // Morph teeth slightly into ideal alignment
+            upperArch.children.forEach((t, idx) => {
+                if (t.isGroup) {
+                    const crowdOffset = Math.sin(idx * 1.5) * (1 - factor) * 0.35;
+                    t.position.y = 1.4 + crowdOffset * 0.2;
+                    t.rotation.z = crowdOffset * 0.4;
+                }
+            });
+            lowerArch.children.forEach((t, idx) => {
+                if (t.isGroup) {
+                    const crowdOffset = Math.cos(idx * 1.5) * (1 - factor) * 0.3;
+                    t.position.y = -1.4 - crowdOffset * 0.2;
+                    t.rotation.z = -crowdOffset * 0.3;
+                }
+            });
+        }
+
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            document.getElementById('playIcon').innerText = isPlaying ? '❚❚' : '▶';
+            if (isPlaying) {
+                playInterval = setInterval(() => {
+                    currentStep = currentStep >= totalSteps ? 1 : currentStep + 1;
+                    document.getElementById('stageSlider').value = currentStep;
+                    onSliderChange(currentStep);
+                }, 400);
+            } else {
+                clearInterval(playInterval);
+            }
+        }
+
+        function prevStep() {
+            currentStep = Math.max(1, currentStep - 1);
+            document.getElementById('stageSlider').value = currentStep;
+            onSliderChange(currentStep);
+        }
+
+        function nextStep() {
+            currentStep = Math.min(totalSteps, currentStep + 1);
+            document.getElementById('stageSlider').value = currentStep;
+            onSliderChange(currentStep);
+        }
+
+        function resetRotation() {
+            scene.rotation.set(0, 0, 0);
+            camera.position.set(0, 5, 28);
+        }
+
+        function setView(angle, evt) {
+            document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+            const ev = evt || window.event;
+            if (ev && ev.target) {
+                ev.target.classList.add('active');
+            } else {
+                const btn = Array.from(document.querySelectorAll('.preset-btn')).find(b => b.getAttribute('onclick') && b.getAttribute('onclick').includes(angle));
+                if (btn) btn.classList.add('active');
+            }
+
+            if (angle === 'front') {
+                scene.rotation.set(0, 0, 0);
+                camera.position.set(0, 0, 26);
+            } else if (angle === 'upper') {
+                scene.rotation.set(Math.PI / 2.2, 0, 0);
+                camera.position.set(0, 15, 20);
+            } else if (angle === 'lower') {
+                scene.rotation.set(-Math.PI / 2.2, 0, 0);
+                camera.position.set(0, -15, 20);
+            } else if (angle === 'right') {
+                scene.rotation.set(0, -Math.PI / 2.5, 0);
+                camera.position.set(15, 0, 22);
+            } else if (angle === 'left') {
+                scene.rotation.set(0, Math.PI / 2.5, 0);
+                camera.position.set(-15, 0, 22);
+            }
+        }
+
+        function toggleAligner() {
+            showAligner = !showAligner;
+            if (upperAligner) upperAligner.visible = showAligner;
+            if (lowerAligner) lowerAligner.visible = showAligner;
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>

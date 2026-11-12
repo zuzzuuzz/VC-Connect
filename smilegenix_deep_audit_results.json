@@ -1,0 +1,85 @@
+{
+  "targetUrl": "https://cloud.smilegenix.ae",
+  "timestamp": "2026-10-27T17:57:41.787Z",
+  "loadDurationMs": 6059,
+  "httpHeaders": {
+    "server": "nginx/1.24.0 (Ubuntu)",
+    "date": "Tue, 27 Oct 2026 17:57:38 GMT",
+    "content-type": "text/html",
+    "content-length": "1516",
+    "last-modified": "Tue, 20 Oct 2026 14:48:33 GMT",
+    "connection": "keep-alive",
+    "etag": "\"6ad77f41-5ec\"",
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "pragma": "no-cache",
+    "expires": "0",
+    "accept-ranges": "bytes"
+  },
+  "runtimeMetrics": {
+    "pageTitle": "Login | Smile Genix",
+    "currentUrl": "https://cloud.smilegenix.ae/login",
+    "domNodeCount": 105,
+    "scriptsCount": 2,
+    "scripts": [
+      "https://cloud.smilegenix.ae/assets/index-5EUXN9UG.js"
+    ],
+    "linksCount": 15,
+    "localStorageKeys": [
+      "pusherTransportTLS"
+    ],
+    "sessionStorageKeys": [],
+    "cookiesLength": 0,
+    "memory": {
+      "totalJSHeapSize": 12274813,
+      "usedJSHeapSize": 8350633,
+      "jsHeapSizeLimit": 4395630592
+    },
+    "navMetrics": {
+      "dnsTime": 86.2999997138977,
+      "tcpTime": 842.8000001907349,
+      "tlsTime": 259.80000019073486,
+      "ttfb": 265.90000009536743,
+      "downloadTime": 0.3000001907348633,
+      "domInteractive": 1207.6999998092651,
+      "domContentLoaded": 3673.4000000953674,
+      "loadEventEnd": 4732.5
+    }
+  },
+  "networkSummary": {
+    "totalRequests": 40,
+    "totalBytes": 265271,
+    "totalMegabytes": "0.25",
+    "assetBreakdown": {
+      "document": 1,
+      "manifest": 1,
+      "stylesheet": 14,
+      "script": 9,
+      "image": 10,
+      "font": 3,
+      "other": 2
+    },
+    "uncompressedTextAssetsCount": 0,
+    "uncompressedExamples": []
+  },
+  "consoleIssues": {
+    "total": 2,
+    "errors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "warnings": [],
+    "logs": [
+      {
+        "type": "verbose",
+        "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ]
+  },
+  "failedRequests": []
+}

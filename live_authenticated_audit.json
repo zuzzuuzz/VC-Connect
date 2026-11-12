@@ -1,0 +1,526 @@
+{
+  "timestamp": "2026-10-27T18:19:08.884Z",
+  "profile1": {
+    "label": "planner_ibrar",
+    "username": "Ibrar@smilegenix",
+    "visitedResults": [
+      {
+        "requestedRoute": "/dashboard",
+        "actualUrl": "https://cloud.smilegenix.ae/dashboard",
+        "title": "Dashboard | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "99+ unread messages Ibrar Ahmed Planner Dashboard Planner Dashboard Placeholder",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/cases",
+        "actualUrl": "https://cloud.smilegenix.ae/cases",
+        "title": "Cases | Smile Genix",
+        "tableRowsCount": 20,
+        "bodySnippet": "99+ unread messages Ibrar Ahmed Planner Dashboard Patient Cases In Planning 20 Plan Ready For QC 0 Plan Needs Correction 0 In Modification 5 Mod Ready",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/profile",
+        "actualUrl": "https://cloud.smilegenix.ae/profile",
+        "title": "Profile | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "99+ unread messages Ibrar Ahmed Planner",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/messages",
+        "actualUrl": "https://cloud.smilegenix.ae/messages",
+        "title": "Messages | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "99+ unread messages Ibrar Ahmed Planner Dashboard Messages Messages Chats Contacts 217 No active conversations yet. Open Contacts to start one. Your m",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/roles",
+        "actualUrl": "https://cloud.smilegenix.ae/403",
+        "title": "403 - Access Denied | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "403 Access Denied! You do not have permission to access this page. Please contact your administrator if you believe this is a mistake. Back to home",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/clients",
+        "actualUrl": "https://cloud.smilegenix.ae/403",
+        "title": "403 - Access Denied | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "403 Access Denied! You do not have permission to access this page. Please contact your administrator if you believe this is a mistake. Back to home",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/invoices",
+        "actualUrl": "https://cloud.smilegenix.ae/403",
+        "title": "403 - Access Denied | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "403 Access Denied! You do not have permission to access this page. Please contact your administrator if you believe this is a mistake. Back to home",
+        "newErrors": [],
+        "newFailedRequests": []
+      }
+    ],
+    "consoleIssues": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedNetwork": [
+      {
+        "url": "https://cloud.smilegenix.ae/images/cover-pattern.png",
+        "status": 404,
+        "statusText": "Not Found"
+      }
+    ],
+    "apiEndpointsCalled": [
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/login",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/login",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/filter-options",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/filter-options",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases?page=1&per_page=20&sort%5Bfield%5D=id&sort%5Bdirection%5D=desc",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases?page=1&per_page=20&sort%5Bfield%5D=id&sort%5Bdirection%5D=desc",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34779/comments/presence",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34779/comments/presence",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34779/comments?page=1",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34779/comments?page=1",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34779",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34779",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34779/comments?page=1",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34779/comments/presence/leave",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34779/comments/presence/leave",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34779/comments?page=1",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/profile",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/profile",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/chat?page=1&per_page=15",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/chat?page=1&per_page=15",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      }
+    ]
+  },
+  "profile2": {
+    "label": "planner_3daligner",
+    "username": "3Dalignerplanner@smilegenix",
+    "visitedResults": [
+      {
+        "requestedRoute": "/dashboard",
+        "actualUrl": "https://cloud.smilegenix.ae/dashboard",
+        "title": "Dashboard | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "99+ unread messages 3DAligner Planner Planner Dashboard Planner Dashboard Placeholder",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/cases",
+        "actualUrl": "https://cloud.smilegenix.ae/cases",
+        "title": "Cases | Smile Genix",
+        "tableRowsCount": 1,
+        "bodySnippet": "99+ unread messages 3DAligner Planner Planner Dashboard Patient Cases In Planning 1 Plan Ready For QC 0 Plan Needs Correction 0 In Modification 0 Mod ",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/profile",
+        "actualUrl": "https://cloud.smilegenix.ae/profile",
+        "title": "Profile | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "99+ unread messages 3DAligner Planner Planner",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/messages",
+        "actualUrl": "https://cloud.smilegenix.ae/messages",
+        "title": "Messages | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "99+ unread messages 3DAligner Planner Planner Dashboard Messages Messages Chats Contacts 217 No active conversations yet. Open Contacts to start one. ",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/roles",
+        "actualUrl": "https://cloud.smilegenix.ae/403",
+        "title": "403 - Access Denied | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "403 Access Denied! You do not have permission to access this page. Please contact your administrator if you believe this is a mistake. Back to home",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/clients",
+        "actualUrl": "https://cloud.smilegenix.ae/403",
+        "title": "403 - Access Denied | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "403 Access Denied! You do not have permission to access this page. Please contact your administrator if you believe this is a mistake. Back to home",
+        "newErrors": [],
+        "newFailedRequests": []
+      },
+      {
+        "requestedRoute": "/invoices",
+        "actualUrl": "https://cloud.smilegenix.ae/403",
+        "title": "403 - Access Denied | SmileGenix Admin Portal",
+        "tableRowsCount": 0,
+        "bodySnippet": "403 Access Denied! You do not have permission to access this page. Please contact your administrator if you believe this is a mistake. Back to home",
+        "newErrors": [],
+        "newFailedRequests": []
+      }
+    ],
+    "consoleIssues": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedNetwork": [
+      {
+        "url": "https://cloud.smilegenix.ae/images/cover-pattern.png",
+        "status": 404,
+        "statusText": "Not Found"
+      }
+    ],
+    "apiEndpointsCalled": [
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/login",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/login",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/filter-options",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/filter-options",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases?page=1&per_page=20&sort%5Bfield%5D=id&sort%5Bdirection%5D=desc",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases?page=1&per_page=20&sort%5Bfield%5D=id&sort%5Bdirection%5D=desc",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34768/comments/presence",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34768/comments?page=1",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34768/comments/presence",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34768",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34768/comments?page=1",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34768",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34768/comments/presence/leave",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34768/comments?page=1",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/cases/34768/comments/presence/leave",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/profile",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/profile",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/chat?page=1&per_page=15",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/chat?page=1&per_page=15",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "OPTIONS",
+        "status": 204
+      },
+      {
+        "url": "https://api.cloud.smilegenix.ae/api/auth/verify",
+        "method": "GET",
+        "status": 200
+      }
+    ]
+  }
+}

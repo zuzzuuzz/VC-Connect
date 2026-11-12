@@ -1,0 +1,114 @@
+{
+  "pagesAudited": 19,
+  "consoleErrors": [],
+  "networkErrors": [],
+  "modalTests": [
+    {
+      "modal": "TestEmailModal",
+      "opened": true
+    },
+    {
+      "modal": "CreateCaseModal",
+      "visible": true,
+      "title": "Create New Dental Case",
+      "hasClientSelect": true,
+      "inputsCount": 28
+    },
+    {
+      "action": "Edit Case",
+      "open": false,
+      "title": null
+    },
+    {
+      "action": "Edit Patient",
+      "open": false,
+      "title": null
+    },
+    {
+      "action": "Change Status",
+      "open": false,
+      "title": null
+    },
+    {
+      "action": "Assign Planner",
+      "open": false,
+      "title": null
+    },
+    {
+      "action": "Change Client",
+      "open": false,
+      "title": null
+    },
+    {
+      "modal": "CreateClientModal",
+      "open": true,
+      "title": "Create New Client",
+      "fieldCount": 12
+    },
+    {
+      "modal": "CreateSubClientModal",
+      "open": true,
+      "title": "Create New Sub Client"
+    },
+    {
+      "modal": "CreateVendorModal",
+      "open": true,
+      "title": "Create New Vendor"
+    },
+    {
+      "modal": "CreateUserModal",
+      "open": true,
+      "title": "Create New User"
+    },
+    {
+      "modal": "CreateRoleModal",
+      "open": true,
+      "title": "Create New Role"
+    },
+    {
+      "modal": "AddBankAccountModal",
+      "open": true,
+      "title": "Add bank account"
+    },
+    {
+      "modal": "AddCredentialModal",
+      "open": true,
+      "title": "Create API Credential"
+    }
+  ],
+  "formTests": [],
+  "interactionTests": [
+    {
+      "component": "CaseDetailTab",
+      "tab": "Overview",
+      "success": true
+    },
+    {
+      "component": "CaseDetailTab",
+      "tab": "Treatment Plans",
+      "success": true
+    },
+    {
+      "component": "CaseDetailTab",
+      "tab": "IPR Protocol",
+      "success": true
+    },
+    {
+      "component": "CaseDetailTab",
+      "tab": "Step Files",
+      "success": true
+    },
+    {
+      "component": "CaseDetailTab",
+      "tab": "Manufacturing",
+      "success": true
+    },
+    {
+      "component": "CaseDetailTab",
+      "tab": "Activities",
+      "success": true
+    }
+  ],
+  "responsiveGlitches": [],
+  "generalGlitches": []
+}

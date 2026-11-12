@@ -1,0 +1,1 @@
+const t=e=>e?e.split("-").map(r=>r.charAt(0).toUpperCase()+r.slice(1)).join(" "):"",a=e=>e?e.toLowerCase().trim().replace(/[^\w\s-]/g,"").replace(/[\s_-]+/g,"-").replace(/^-+|-+$/g,""):"";export{t as f,a as s};

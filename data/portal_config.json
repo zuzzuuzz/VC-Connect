@@ -1,0 +1,357 @@
+{
+  "residencyTypes": {
+    "local": "Local Resident",
+    "overseas": "Overseas",
+    "travelling": "Travelling / Tourist",
+    "expat": "Expatriate Resident",
+    "gcc_national": "GCC National"
+  },
+  "caseCategories": {
+    "Aligners": "Aligners",
+    "Retainers": "Retainers",
+    "Refinements": "Refinements",
+    "Nightguards": "Nightguards",
+    "Sleep Apnea Splints": "Sleep Apnea Splints"
+  },
+  "caseCategoryTypes": {
+    "Dentist": "Dentist",
+    "Orthodontist": "Orthodontist",
+    "Oral Surgeon": "Oral Surgeon"
+  },
+  "deliveryTimes": {
+    "4 hrs": "4 hrs (Emergency Rush)",
+    "8 hrs": "8 hrs (Express)",
+    "24 hrs": "24 hrs (Standard)",
+    "48 hrs": "48 hrs (Economy)"
+  },
+  "jawArchTypes": {
+    "Both Arch": "Both Arch (Dual Arch)",
+    "Upper only": "Upper Arch Only",
+    "Lower only": "Lower Arch Only"
+  },
+  "jawArchCorrections": {
+    "(3-3)": "Anterior Only (3-3)",
+    "(5-5)": "Premolar to Premolar (5-5)",
+    "Full arch correction": "Full Arch Molar-to-Molar Correction"
+  },
+  "jawToothFormats": {
+    "FDI Notation": "FDI Two-Digit (ISO 3950)",
+    "Universal Notation": "Universal Numbering System (1-32)",
+    "Palmer Notation": "Palmer Notation"
+  },
+  "clients": [
+    {
+      "id": 1,
+      "name": "Wright Orthodontics Clinic",
+      "company_title": "Wright Orthodontics Dubai",
+      "email": "doctor@velourcare.com",
+      "phone": "+971 50 123 4567",
+      "case_id_prefix": "WRIGHT",
+      "is_express_delivery_active": "YES",
+      "is_alphanumeric_case_id_active": "YES",
+      "addresses": [
+        {
+          "id": 1,
+          "is_default": true,
+          "title": "Main Practice Dubai Healthcare City",
+          "address_line_1": "Building 64, Al Razi Medical Complex, Suite 302",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 4 398 2211"
+        },
+        {
+          "id": 2,
+          "is_default": false,
+          "title": "Downtown Dubai Delivery Hub",
+          "address_line_1": "Sheikh Mohammed bin Rashid Blvd, Downtown",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 4 551 9898"
+        },
+        {
+          "id": 3,
+          "is_default": false,
+          "title": "Sharjah Al Majaz Clinic",
+          "address_line_1": "Corniche St, Al Majaz 2, Level 5",
+          "address_line_2": "",
+          "city": "Sharjah",
+          "state": "Sharjah",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 6 555 1234"
+        },
+        {
+          "id": 4,
+          "is_default": false,
+          "title": "Branch 2",
+          "address_line_1": "",
+          "address_line_2": "",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 50 123 4567"
+        }
+      ],
+      "sub_clients": [
+        {
+          "id": 1,
+          "name": "Downtown Dubai Clinic Branch"
+        },
+        {
+          "id": 2,
+          "name": "Jumeirah Specialist Centre"
+        }
+      ],
+      "shipment_addresses": [
+        {
+          "id": 1,
+          "is_default": true,
+          "title": "Main Practice Dubai Healthcare City",
+          "address_line_1": "Building 64, Al Razi Medical Complex, Suite 302",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 4 398 2211"
+        },
+        {
+          "id": 2,
+          "is_default": false,
+          "title": "Downtown Dubai Delivery Hub",
+          "address_line_1": "Sheikh Mohammed bin Rashid Blvd, Downtown",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 4 551 9898"
+        },
+        {
+          "id": 3,
+          "is_default": false,
+          "title": "Sharjah Al Majaz Clinic",
+          "address_line_1": "Corniche St, Al Majaz 2, Level 5",
+          "address_line_2": "",
+          "city": "Sharjah",
+          "state": "Sharjah",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 6 555 1234"
+        },
+        {
+          "id": 4,
+          "is_default": false,
+          "title": "Branch 2",
+          "address_line_1": "",
+          "address_line_2": "",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 50 123 4567"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Emirates Smile Design Dental Center",
+      "company_title": "Emirates Smile Clinic Abu Dhabi",
+      "email": "contact@emiratessmile.ae",
+      "phone": "+971 2 644 8899",
+      "case_id_prefix": "ESMILE",
+      "is_express_delivery_active": "YES",
+      "is_alphanumeric_case_id_active": "YES",
+      "addresses": [
+        {
+          "id": 1,
+          "is_default": true,
+          "title": "Corniche Central Clinic",
+          "address_line_1": "Corniche Road West, Tower B, Level 14",
+          "city": "Abu Dhabi",
+          "state": "Abu Dhabi",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 2 644 8899"
+        }
+      ],
+      "sub_clients": [
+        {
+          "id": 3,
+          "name": "Al Ain Branch Practice"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Al Wasl Aesthetic Dentistry",
+      "company_title": "Al Wasl Aesthetic Dentistry",
+      "company_name": "Al Wasl Aesthetic Dentistry",
+      "email": "contact@alwasldental.ae",
+      "phone": "+971 4 000 0000",
+      "case_id_prefix": "WASL",
+      "is_manufacturing_active": "NO",
+      "is_express_delivery_active": "YES",
+      "is_alphanumeric_case_id_active": "YES",
+      "is_sub_clients_allowed": "NO",
+      "last_case_number": 0,
+      "country": "United Arab Emirates",
+      "addresses": [
+        {
+          "id": 1,
+          "title": "Main Practice Address",
+          "address_line_1": "Dubai Healthcare City, Complex 64",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 4 000 0000",
+          "is_default": true
+        }
+      ],
+      "shipment_addresses": [
+        {
+          "id": 1,
+          "title": "Main Practice Delivery Hub",
+          "address_line_1": "Dubai Healthcare City, Delivery Hub",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 4 000 0000",
+          "is_default": true
+        }
+      ],
+      "sub_clients": []
+    },
+    {
+      "id": 4,
+      "name": "Shampi",
+      "company_title": "Shampi",
+      "company_name": "Shampi",
+      "email": "clinic@practice.ae",
+      "phone": "+971 4 000 0000",
+      "case_id_prefix": "FS",
+      "is_manufacturing_active": "NO",
+      "is_express_delivery_active": "NO",
+      "is_alphanumeric_case_id_active": "YES",
+      "is_sub_clients_allowed": "NO",
+      "last_case_number": 0,
+      "country": "Saudi Arabia",
+      "addresses": [
+        {
+          "id": 1,
+          "title": "Main Practice Address",
+          "address_line_1": "Dubai Healthcare City, Complex 64",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "Saudi Arabia",
+          "phone": "+971 4 000 0000",
+          "is_default": true
+        }
+      ],
+      "shipment_addresses": [
+        {
+          "id": 1,
+          "title": "Main Practice Delivery Hub",
+          "address_line_1": "Dubai Healthcare City, Delivery Hub",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "Saudi Arabia",
+          "phone": "+971 4 000 0000",
+          "is_default": true
+        }
+      ],
+      "sub_clients": []
+    },
+    {
+      "id": 5,
+      "name": "QA Test Clinic LLC",
+      "company_title": "QA Test Clinic",
+      "company_name": "QA Test Clinic LLC",
+      "email": "qa@clinic.ae",
+      "phone": "+971 55 999 8888",
+      "case_id_prefix": "QACLINIC",
+      "is_manufacturing_active": "NO",
+      "is_express_delivery_active": "NO",
+      "is_alphanumeric_case_id_active": "YES",
+      "is_sub_clients_allowed": "NO",
+      "last_case_number": 0,
+      "country": "United Arab Emirates",
+      "addresses": [
+        {
+          "id": 1,
+          "title": "Main Practice Address",
+          "address_line_1": "Dubai Healthcare City, Complex 64",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 55 999 8888",
+          "is_default": true
+        }
+      ],
+      "shipment_addresses": [
+        {
+          "id": 1,
+          "title": "Main Practice Delivery Hub",
+          "address_line_1": "Dubai Healthcare City, Delivery Hub",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 55 999 8888",
+          "is_default": true
+        }
+      ],
+      "sub_clients": []
+    },
+    {
+      "id": 6,
+      "name": "QA Test Clinic LLC",
+      "company_title": "QA Test Clinic",
+      "company_name": "QA Test Clinic LLC",
+      "email": "qa@clinic.ae",
+      "phone": "+971 55 999 8888",
+      "case_id_prefix": "QACLINIC",
+      "is_manufacturing_active": "NO",
+      "is_express_delivery_active": "NO",
+      "is_alphanumeric_case_id_active": "YES",
+      "is_sub_clients_allowed": "NO",
+      "last_case_number": 0,
+      "country": "United Arab Emirates",
+      "addresses": [
+        {
+          "id": 1,
+          "title": "Main Practice Address",
+          "address_line_1": "Dubai Healthcare City, Complex 64",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 55 999 8888",
+          "is_default": true
+        }
+      ],
+      "shipment_addresses": [
+        {
+          "id": 1,
+          "title": "Main Practice Delivery Hub",
+          "address_line_1": "Dubai Healthcare City, Delivery Hub",
+          "city": "Dubai",
+          "state": "Dubai",
+          "postal_code": "00000",
+          "country": "United Arab Emirates",
+          "phone": "+971 55 999 8888",
+          "is_default": true
+        }
+      ],
+      "sub_clients": []
+    }
+  ]
+}

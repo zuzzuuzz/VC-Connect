@@ -1,0 +1,351 @@
+{
+  "timestamp": "2026-11-11T13:18:51.893Z",
+  "security": [
+    {
+      "check": "Unauthenticated Access to /api/cases",
+      "severity": "PASS",
+      "description": "Endpoint /api/cases (All Patient Cases) is accessible without authentication token or session cookie.",
+      "status": 401,
+      "leakedCount": 1
+    },
+    {
+      "check": "Unauthenticated Access to /api/cases/1",
+      "severity": "PASS",
+      "description": "Endpoint /api/cases/1 (Single Patient Case #1) is accessible without authentication token or session cookie.",
+      "status": 401,
+      "leakedCount": 1
+    },
+    {
+      "check": "Unauthenticated Access to /api/users",
+      "severity": "PASS",
+      "description": "Endpoint /api/users (All System Users & Roles) is accessible without authentication token or session cookie.",
+      "status": 401,
+      "leakedCount": 1
+    },
+    {
+      "check": "Unauthenticated Access to /api/clients",
+      "severity": "PASS",
+      "description": "Endpoint /api/clients (Clinic Partner Directory) is accessible without authentication token or session cookie.",
+      "status": 401,
+      "leakedCount": 1
+    },
+    {
+      "check": "Unauthenticated Access to /api/invoices",
+      "severity": "PASS",
+      "description": "Endpoint /api/invoices (Financial Invoices & Ledger) is accessible without authentication token or session cookie.",
+      "status": 401,
+      "leakedCount": 1
+    },
+    {
+      "check": "Unauthenticated Access to /api/bank-accounts",
+      "severity": "PASS",
+      "description": "Endpoint /api/bank-accounts (Bank Payout Accounts) is accessible without authentication token or session cookie.",
+      "status": 401,
+      "leakedCount": 1
+    },
+    {
+      "check": "Unauthenticated Access to /api/client-api-credentials",
+      "severity": "PASS",
+      "description": "Endpoint /api/client-api-credentials (External API Tokens) is accessible without authentication token or session cookie.",
+      "status": 401,
+      "leakedCount": 1
+    },
+    {
+      "check": "Unauthenticated Access to /api/patients",
+      "severity": "PASS",
+      "description": "Endpoint /api/patients (Master Patient List) is accessible without authentication token or session cookie.",
+      "status": 401,
+      "leakedCount": 1
+    },
+    {
+      "check": "Unauthenticated Access to /api/roles",
+      "severity": "PASS",
+      "description": "Endpoint /api/roles (System RBAC Roles) is accessible without authentication token or session cookie.",
+      "status": 401,
+      "leakedCount": 1
+    },
+    {
+      "check": "Unsigned / Blind Bearer Token Acceptance",
+      "severity": "PASS",
+      "description": "Server accepts arbitrary bearer tokens without cryptographic signature verification (HMAC-SHA256 JWT validation missing).",
+      "status": 401
+    },
+    {
+      "check": "Unrestricted File Upload & Extension Validation",
+      "severity": "PASS",
+      "description": "Upload endpoint accepts arbitrary HTML / non-medical file extensions without MIME validation or filename sanitization.",
+      "status": 400,
+      "body": "{\"success\":false,\"message\":\"A valid zip/medical model file (.zip, .stl, .ply, .o3c) is required in the 'zip_file' field.\"}"
+    },
+    {
+      "check": "Public Exposure of PHI Asset: /uploads/sample-ipr-chart-protocol.pdf",
+      "severity": "PASS",
+      "description": "Patient clinical documents and 3D dental models are accessible directly over public unauthenticated HTTP URLs, violating HIPAA Security Rule (45 CFR § 164.312).",
+      "status": 401
+    },
+    {
+      "check": "Public Exposure of PHI Asset: /uploads/velourcare-ipr-chart-sample.pdf",
+      "severity": "PASS",
+      "description": "Patient clinical documents and 3D dental models are accessible directly over public unauthenticated HTTP URLs, violating HIPAA Security Rule (45 CFR § 164.312).",
+      "status": 401
+    },
+    {
+      "check": "Public Exposure of PHI Asset: /uploads/sample-treatment-models.zip",
+      "severity": "PASS",
+      "description": "Patient clinical documents and 3D dental models are accessible directly over public unauthenticated HTTP URLs, violating HIPAA Security Rule (45 CFR § 164.312).",
+      "status": 401
+    },
+    {
+      "check": "Public Exposure of PHI Asset: /uploads/sample-treatment-container.o3c",
+      "severity": "PASS",
+      "description": "Patient clinical documents and 3D dental models are accessible directly over public unauthenticated HTTP URLs, violating HIPAA Security Rule (45 CFR § 164.312).",
+      "status": 401
+    },
+    {
+      "check": "Header: Content-Security-Policy",
+      "severity": "PASS",
+      "description": "Header present: default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:;",
+      "value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:;"
+    },
+    {
+      "check": "Header: X-Content-Type-Options: nosniff",
+      "severity": "PASS",
+      "description": "Header present: nosniff",
+      "value": "nosniff"
+    },
+    {
+      "check": "Header: X-Frame-Options: DENY / SAMEORIGIN",
+      "severity": "PASS",
+      "description": "Header present: SAMEORIGIN",
+      "value": "SAMEORIGIN"
+    },
+    {
+      "check": "Header: Strict-Transport-Security",
+      "severity": "MEDIUM",
+      "description": "Missing Strict-Transport-Security header on web response.",
+      "value": "MISSING"
+    },
+    {
+      "check": "Header: Access-Control-Allow-Origin: Restricted",
+      "severity": "MEDIUM",
+      "description": "Missing Access-Control-Allow-Origin: Restricted header on web response.",
+      "value": "MISSING"
+    },
+    {
+      "check": "API Rate Limiting & Throttling",
+      "severity": "MEDIUM",
+      "description": "No rate limiting detected (50 concurrent requests accepted with 200 OK). Susceptible to API flooding / DoS.",
+      "status": 200
+    }
+  ],
+  "apiGlitches": [
+    {
+      "check": "Cases Pagination Parameter Processing",
+      "severity": "PASS",
+      "description": "Pagination query parameters respected.",
+      "page1Count": 2,
+      "page2Count": 2
+    },
+    {
+      "check": "Server-side Search Filtering",
+      "severity": "PASS",
+      "description": "Search parameter filters dataset.",
+      "returnedCount": 0
+    },
+    {
+      "check": "REST 404 on Missing Case ID (999999)",
+      "severity": "PASS",
+      "description": "GET /api/cases/999999 returned status 404 instead of 404 Not Found.",
+      "status": 404
+    },
+    {
+      "check": "Referential Integrity on Primary Client Deletion",
+      "severity": "PASS",
+      "description": "DELETE /api/clients/1 succeeds or simulates success even though active cases and invoices are linked to Client #1 without foreign key check.",
+      "status": 404,
+      "body": "{\"message\":\"API endpoint /api/clients/1 not found.\"}"
+    }
+  ],
+  "frontendGlitches": [
+    {
+      "component": "CaseDiscussion",
+      "check": "Comment Posting via UI",
+      "severity": "MEDIUM",
+      "description": "Comment input or send button failed to immediately update discussion feed."
+    },
+    {
+      "component": "SimulationViewer",
+      "check": "WebGL Canvas Initialization",
+      "severity": "HIGH",
+      "diagnostics": {
+        "hasCanvas": true,
+        "webglContextActive": false,
+        "canvasDimensions": {
+          "width": 1440,
+          "height": 900
+        },
+        "controls": [
+          "Frontal Bite",
+          "Upper Occlusal",
+          "Lower Occlusal",
+          "Right Buccal",
+          "Left Buccal",
+          " Toggle Aligner",
+          "▶",
+          "◀",
+          "range",
+          "▶",
+          "↺"
+        ],
+        "textSummary": "VelourCare Ortho 3D Digital Setup #1 Patient: Fatima Al-Nuaimi Case ID: VELOUR-0001 Doctor: Dr. Alexander Wright Prescription: 22 Upper / 18 Lower Back to Case Frontal Bite Upper Occlusal Lower Occlus"
+      }
+    }
+  ],
+  "performance": [
+    {
+      "check": "Bundle Size & Code Splitting",
+      "totalJsKB": 5632,
+      "totalCssKB": 1835,
+      "largeChunks": [
+        {
+          "file": "bootstrap-BxubwAgm.js",
+          "sizeKB": 230
+        },
+        {
+          "file": "boxicons-CSrLvhY_.eot",
+          "sizeKB": 396
+        },
+        {
+          "file": "boxicons-CTVby2V1.woff",
+          "sizeKB": 313
+        },
+        {
+          "file": "boxicons-Dp7W9qN3.svg",
+          "sizeKB": 1213
+        },
+        {
+          "file": "boxicons-EIQNrSje.ttf",
+          "sizeKB": 313
+        },
+        {
+          "file": "ckeditor-MuEv_mM9.js",
+          "sizeKB": 952
+        },
+        {
+          "file": "extraction-D-17GIuv.png",
+          "sizeKB": 252
+        },
+        {
+          "file": "index-5EUXN9UG.js",
+          "sizeKB": 1151
+        },
+        {
+          "file": "index-DSUwJ5hT.js",
+          "sizeKB": 611
+        },
+        {
+          "file": "index-G8lhJxba.css",
+          "sizeKB": 1578
+        },
+        {
+          "file": "invisible-braces-logo-DDzGXpyz.png",
+          "sizeKB": 247
+        },
+        {
+          "file": "jaw-lower-krjAroEx.png",
+          "sizeKB": 211
+        },
+        {
+          "file": "la-brands-400-wsUI3UJ9.svg",
+          "sizeKB": 906
+        },
+        {
+          "file": "la-solid-900-BUOWlSBQ.ttf",
+          "sizeKB": 221
+        },
+        {
+          "file": "la-solid-900-DkmX4G2x.eot",
+          "sizeKB": 221
+        },
+        {
+          "file": "la-solid-900-dtlPMWb8.svg",
+          "sizeKB": 902
+        },
+        {
+          "file": "login-page-logo-BDn48l5g.jpeg",
+          "sizeKB": 247
+        },
+        {
+          "file": "logo-CAn7cGuO.png",
+          "sizeKB": 247
+        },
+        {
+          "file": "logo-with-text-C8dADaaX.png",
+          "sizeKB": 247
+        },
+        {
+          "file": "lottie-CcS2AQ-7.js",
+          "sizeKB": 301
+        },
+        {
+          "file": "materialdesignicons-webfont-BqTIB9TP.woff",
+          "sizeKB": 563
+        },
+        {
+          "file": "materialdesignicons-webfont-Cd51xsCA.eot",
+          "sizeKB": 1250
+        },
+        {
+          "file": "materialdesignicons-webfont-CfT4HAkQ.ttf",
+          "sizeKB": 1250
+        },
+        {
+          "file": "materialdesignicons-webfont-DsMmahHu.woff2",
+          "sizeKB": 387
+        },
+        {
+          "file": "missingtooth-Cil-4AIP.png",
+          "sizeKB": 271
+        },
+        {
+          "file": "PlanDocumentEditor-3l74hQz7.js",
+          "sizeKB": 703
+        },
+        {
+          "file": "remixicon-C918_50B.eot",
+          "sizeKB": 459
+        },
+        {
+          "file": "remixicon-DbhS7E1z.svg",
+          "sizeKB": 2260
+        },
+        {
+          "file": "remixicon-R6tvtu3m.ttf",
+          "sizeKB": 459
+        },
+        {
+          "file": "velourcare-logo.png",
+          "sizeKB": 247
+        },
+        {
+          "file": "velourcare-square.png",
+          "sizeKB": 233
+        },
+        {
+          "file": "view-DS3MYUE6.js",
+          "sizeKB": 356
+        }
+      ],
+      "severity": "HIGH",
+      "description": "Frontend loads over 2MB of JavaScript on initial boot. Vendor libraries (CKEditor, Three.js, Bootstrap) are bundled into large chunks without dynamic lazy loading."
+    }
+  ],
+  "uxAndA11y": [
+    {
+      "component": "Localization",
+      "check": "RTL Support",
+      "severity": "MEDIUM",
+      "description": "Arabic language selection does not toggle document direction to RTL (dir=\"rtl\"), causing incorrect layout flow in Middle Eastern healthcare environments."
+    }
+  ]
+}

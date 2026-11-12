@@ -1,0 +1,1 @@
+import{B as e}from"./BaseService-DwAy_yNp.js";import{b as a}from"./index-5EUXN9UG.js";class r extends e{constructor(){super("/sub-clients")}async updateStatus(s,t){return(await a.patch(`sub-clients/${s}/update-status`,t)).data}}const u=new r;export{u as s};

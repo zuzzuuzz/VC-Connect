@@ -1,0 +1,22 @@
+{
+  "name": "velourcare-ortho-cloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node verify_all_fixes.js",
+    "test:all": "node tests/clinical_workflow_test.js && node tests/file_upload_security_test.js && node tests/frontend_ui_test.js && node tests/invoice_create_dropdown_test.js && node tests/performance_test.js && node tests/rest_contract_test.js && node tests/security_auth_test.js"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "compression": "^1.8.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "multer": "^2.5.0",
+    "puppeteer-core": "^25.16.0"
+  }
+}
